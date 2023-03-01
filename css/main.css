@@ -1,0 +1,13 @@
+body { 
+    font-family: 'Tangerine', serif; 
+    font-size: 48px; 
+    background-color: #000000; 
+    color: #fc0fc0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
