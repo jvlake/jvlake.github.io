@@ -18,6 +18,10 @@ function Star(x, y, size, velocity) {
 	this.velocity = velocity;
 }
 
+function randomIntFromInterval(min, max) { // min and max included 
+	return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 Starfield.prototype.initialise = function(div) {
 	var self = this;
 
@@ -47,7 +51,7 @@ Starfield.prototype.start = function() {
 	//	Create the stars.
 	var stars = [];
 	for(var i=0; i<this.stars; i++) {
-		stars[i] = new Star(Math.random()*this.width, Math.random()*this.height, Math.random()*2+1,
+		stars[i] = new Star(Math.random()*this.width, Math.random()*this.height, randomIntFromInterval(1, 2),
 		 (Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity);
 	}
 	this.stars = stars;
