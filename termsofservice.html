@@ -23,8 +23,40 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Dongle"
     />
+    <script src="scripts/starfield.js"></script>
+    <style>
+        body { 
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            overflow: hidden;
+        }
+    </style>
   </head>
   <body>
+    <div id="container"></div>
+    <script>
+		var container = document.getElementById('container');
+		var starfield = new Starfield();
+		starfield.initialise(container);
+		starfield.start();
+
+		function randomise() {
+			starfield.stop();
+			starfield.stars = Math.random()*1000 + 50;
+			starfield.minVelocity = Math.random()*30+5;
+			starfield.maxVelocity = Math.random()*50 + starfield.minVelocity;			
+			starfield.start();
+		}
+	</script>
     <div>
       <h1>Terms of Service</h1>
       <p>Last updated: 1 April 2023</p>
