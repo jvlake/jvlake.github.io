@@ -19,12 +19,20 @@
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="scripts/starfield.js"></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Dongle"
     />
   </head>
   <body>
+    <div id="container"></div>
+    <script>
+		var container = document.getElementById('container');
+		var starfield = new Starfield();
+		starfield.initialise(container);
+		starfield.start();
+	</script>
     <div>
       <h1>Privacy Statement</h1>
       <p>Last updated: 1 April 2023</p>

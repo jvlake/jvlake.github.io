@@ -1,7 +1,3 @@
-/*
-	Starfield lets you take a div and turn it into a starfield.
-
-*/
 
 //	Define the starfield class.
 function Starfield() {
@@ -15,7 +11,13 @@ function Starfield() {
 	this.intervalId = 0;
 }
 
-//	The main function - initialises the starfield.
+function Star(x, y, size, velocity) {
+	this.x = x;
+	this.y = y; 
+	this.size = size;
+	this.velocity = velocity;
+}
+
 Starfield.prototype.initialise = function(div) {
 	var self = this;
 
@@ -82,7 +84,7 @@ Starfield.prototype.draw = function() {
 	var ctx = this.canvas.getContext("2d");
 
 	//	Draw the background.
- 	ctx.fillStyle = '#000000';
+ 	ctx.fillStyle = '#0f0d0c';
 	ctx.fillRect(0, 0, this.width, this.height);
 
 	//	Draw stars.
@@ -93,9 +95,10 @@ Starfield.prototype.draw = function() {
 	}
 };
 
-function Star(x, y, size, velocity) {
-	this.x = x;
-	this.y = y; 
-	this.size = size;
-	this.velocity = velocity;
+function randomise() {
+    starfield.stop();
+    starfield.stars = Math.random()*1000 + 50;
+    starfield.minVelocity = Math.random()*30+5;
+    starfield.maxVelocity = Math.random()*50 + starfield.minVelocity;			
+    starfield.start();
 }
