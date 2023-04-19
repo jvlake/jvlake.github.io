@@ -45,7 +45,7 @@ Starfield.prototype.start = function() {
 	//	Create the stars.
 	var stars = [];
 	for(var i=0; i<this.stars; i++) {
-		stars[i] = new Star(Math.random()*this.width, Math.random()*this.height, Math.random()*3+1,
+		stars[i] = new Star(Math.random()*this.width, Math.random()*this.height, Math.random()*2+1,
 		 (Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity);
 	}
 	this.stars = stars;
